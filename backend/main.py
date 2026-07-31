@@ -127,6 +127,6 @@ def get_weather_file_content(file_name: str):
     content = read_json_file(file_name)
     
     if content is None:
-        raise HTTPException(status_code=404, detail={"status": "error", "message": "not found or unsafe path"})
+        return JSONResponse(status_code=404, content={"status": "error", "message": "not found"})
         
     return content
