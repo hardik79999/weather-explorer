@@ -2,4 +2,5 @@ fastapi
 uvicorn[standard]
 httpx
 google-cloud-storage
+boto3
 python-dotenv
