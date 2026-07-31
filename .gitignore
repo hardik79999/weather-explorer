@@ -1,0 +1,24 @@
+# Python & Backend
+backend/__pycache__/
+backend/venv/
+backend/mock_bucket/*.json
+*.pyc
+*.pyo
+
+# Node & Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+
+# Sensitive Environment Files (STRICTLY HIDDEN)
+.env
+*.env
+.env.local
+.env.production
+.env.development
+!.env.example
+
+# IDE & System Files
+.DS_Store
+.vscode/
+.idea/
