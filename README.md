@@ -1,6 +1,18 @@
 # 🌤️ Weather Explorer — Full-Stack Climate Intelligence Engine
 
-A modern, production-grade full-stack web application built with **FastAPI (Python)** and **React + Tailwind CSS + Recharts (Vite)**. The application allows users to query real-world historical weather metrics for location presets (including all 31 Gujarat cities, 28 Indian States & UTs, and Global Metros) or custom coordinates, stores datasets securely in local storage, and visualizes daily temperature trends with interactive charts and paginated data tables.
+A modern, production-grade full-stack web application built with **FastAPI (Python)** and **React + Tailwind CSS + Recharts (Vite)**. The application allows users to query real-world historical weather metrics for location presets (including all 31 Gujarat cities, 28 Indian States & UTs, and Global Metros) or custom coordinates, stores datasets securely in cloud/local storage, and visualizes daily temperature trends with interactive charts and paginated data tables.
+
+---
+
+## 🌐 Live Deployment Links & Branches
+
+| Service | Environment | Link / Repository |
+| :--- | :--- | :--- |
+| **Backend API (Render)** | Production | [https://weather-backend-ck3x.onrender.com](https://weather-backend-ck3x.onrender.com) |
+| **GitHub Repository** | Public | [https://github.com/hardik79999/weather-explorer](https://github.com/hardik79999/weather-explorer) |
+| **`main` Branch** | Combined Full-Stack | [https://github.com/hardik79999/weather-explorer/tree/main](https://github.com/hardik79999/weather-explorer/tree/main) |
+| **`frontend` Branch** | Isolated Frontend | [https://github.com/hardik79999/weather-explorer/tree/frontend](https://github.com/hardik79999/weather-explorer/tree/frontend) |
+| **`backend` Branch** | Isolated Backend | [https://github.com/hardik79999/weather-explorer/tree/backend](https://github.com/hardik79999/weather-explorer/tree/backend) |
 
 ---
 
@@ -14,10 +26,10 @@ weather-explorer/
 ├── backend/                        # Python FastAPI Backend
 │   ├── main.py                     # FastAPI server, CORS, Rate Limiter (5 req/min), Security Middlewares
 │   ├── schemas.py                  # Pydantic validation models (strict type checking, forbidden extra fields)
-│   ├── storage.py                  # Storage layer with Path Traversal protection & auto bucket creation
-│   ├── requirements.txt            # Python dependencies (fastapi, uvicorn, pydantic, httpx)
-│   ├── mock_bucket/                # Local bucket directory storing fetched weather JSON datasets
-│   └── venv/                       # Python Virtual Environment
+│   ├── storage.py                  # Multi-cloud storage engine (AWS S3, GCS, Local Bucket fallback)
+│   ├── requirements.txt            # Python dependencies (fastapi, uvicorn, boto3, google-cloud-storage, httpx)
+│   ├── Dockerfile                  # Containerized deployment file for Render / GCP Cloud Run / AWS
+│   └── mock_bucket/                # Local bucket directory storing fetched weather JSON datasets
 │
 └── frontend/                       # React + Vite + Tailwind CSS Frontend
     ├── index.html                  # HTML entry point loading Inter & Outfit Google Fonts
@@ -80,7 +92,7 @@ Frontend web application will run at: `http://localhost:5173`
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `POST` | `/store-weather-data` | Accepts lat/lon and date range, fetches Open-Meteo archive data, and saves JSON dataset to `mock_bucket`. |
+| `POST` | `/store-weather-data` | Accepts lat/lon and date range, fetches Open-Meteo archive data, and saves JSON dataset. |
 | `GET` | `/list-weather-files` | Returns list of stored dataset files with file names, sizes in bytes, and creation timestamps. |
 | `GET` | `/weather-file-content/{file_name}` | Returns full JSON contents of a specified dataset file for chart & table visualization. |
 
