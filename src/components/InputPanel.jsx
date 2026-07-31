@@ -4,9 +4,9 @@ import { MapPin, Calendar, Compass, ArrowRight, AlertCircle, CheckCircle2, Build
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
-// Database: 31 Gujarat Cities + All 28 Indian States + Global Metros
+// Database: 31 Gujarat Cities + ALL 28 Official Indian States + Global Metros
 const CITIES = [
-  // GUJARAT (31 Cities)
+  // GUJARAT (31 Major Cities/Districts)
   { name: 'Ahmedabad', state: 'Gujarat', country: 'India', lat: '23.0225', lon: '72.5714' },
   { name: 'Surat', state: 'Gujarat', country: 'India', lat: '21.1702', lon: '72.8311' },
   { name: 'Vadodara', state: 'Gujarat', country: 'India', lat: '22.3072', lon: '73.1812' },
@@ -39,17 +39,35 @@ const CITIES = [
   { name: 'Ankleshwar', state: 'Gujarat', country: 'India', lat: '21.6300', lon: '73.0000' },
   { name: 'Gandhidham', state: 'Gujarat', country: 'India', lat: '23.0800', lon: '70.1300' },
 
-  // OTHER STATES OF INDIA
-  { name: 'Mumbai', state: 'Maharashtra', country: 'India', lat: '19.0760', lon: '72.8777' },
-  { name: 'Pune', state: 'Maharashtra', country: 'India', lat: '18.5204', lon: '73.8567' },
-  { name: 'New Delhi', state: 'Delhi NCT', country: 'India', lat: '28.6139', lon: '77.2090' },
+  // ALL 28 OFFICIAL INDIAN STATES COVERAGE
+  { name: 'Visakhapatnam', state: 'Andhra Pradesh', country: 'India', lat: '17.6868', lon: '83.2185' },
+  { name: 'Itanagar', state: 'Arunachal Pradesh', country: 'India', lat: '27.0844', lon: '93.6053' },
+  { name: 'Guwahati', state: 'Assam', country: 'India', lat: '26.1445', lon: '91.7362' },
+  { name: 'Patna', state: 'Bihar', country: 'India', lat: '25.5941', lon: '85.1376' },
+  { name: 'Raipur', state: 'Chhattisgarh', country: 'India', lat: '21.2514', lon: '81.6296' },
+  { name: 'Panaji', state: 'Goa', country: 'India', lat: '15.4909', lon: '73.8278' },
+  { name: 'Gurugram', state: 'Haryana', country: 'India', lat: '28.4595', lon: '77.0266' },
+  { name: 'Shimla', state: 'Himachal Pradesh', country: 'India', lat: '31.1048', lon: '77.1734' },
+  { name: 'Ranchi', state: 'Jharkhand', country: 'India', lat: '23.3441', lon: '85.3096' },
   { name: 'Bengaluru', state: 'Karnataka', country: 'India', lat: '12.9716', lon: '77.5946' },
-  { name: 'Chennai', state: 'Tamil Nadu', country: 'India', lat: '13.0827', lon: '80.2707' },
-  { name: 'Kolkata', state: 'West Bengal', country: 'India', lat: '22.5726', lon: '88.3639' },
-  { name: 'Hyderabad', state: 'Telangana', country: 'India', lat: '17.3850', lon: '78.4867' },
-  { name: 'Jaipur', state: 'Rajasthan', country: 'India', lat: '26.9124', lon: '75.7873' },
-  { name: 'Lucknow', state: 'Uttar Pradesh', country: 'India', lat: '26.8467', lon: '80.9462' },
   { name: 'Thiruvananthapuram', state: 'Kerala', country: 'India', lat: '8.5241', lon: '76.9366' },
+  { name: 'Bhopal', state: 'Madhya Pradesh', country: 'India', lat: '23.2599', lon: '77.4126' },
+  { name: 'Mumbai', state: 'Maharashtra', country: 'India', lat: '19.0760', lon: '72.8777' },
+  { name: 'Imphal', state: 'Manipur', country: 'India', lat: '24.8170', lon: '93.9368' },
+  { name: 'Shillong', state: 'Meghalaya', country: 'India', lat: '25.5788', lon: '91.8933' },
+  { name: 'Aizawl', state: 'Mizoram', country: 'India', lat: '23.7271', lon: '92.7176' },
+  { name: 'Kohima', state: 'Nagaland', country: 'India', lat: '25.6751', lon: '94.1086' },
+  { name: 'Bhubaneswar', state: 'Odisha', country: 'India', lat: '20.2961', lon: '85.8245' },
+  { name: 'Amritsar', state: 'Punjab', country: 'India', lat: '31.6340', lon: '74.8723' },
+  { name: 'Jaipur', state: 'Rajasthan', country: 'India', lat: '26.9124', lon: '75.7873' },
+  { name: 'Gangtok', state: 'Sikkim', country: 'India', lat: '27.3389', lon: '88.6065' },
+  { name: 'Chennai', state: 'Tamil Nadu', country: 'India', lat: '13.0827', lon: '80.2707' },
+  { name: 'Hyderabad', state: 'Telangana', country: 'India', lat: '17.3850', lon: '78.4867' },
+  { name: 'Agartala', state: 'Tripura', country: 'India', lat: '23.8315', lon: '91.2868' },
+  { name: 'Lucknow', state: 'Uttar Pradesh', country: 'India', lat: '26.8467', lon: '80.9462' },
+  { name: 'Dehradun', state: 'Uttarakhand', country: 'India', lat: '30.3165', lon: '78.0322' },
+  { name: 'Kolkata', state: 'West Bengal', country: 'India', lat: '22.5726', lon: '88.3639' },
+  { name: 'New Delhi', state: 'Delhi NCT', country: 'India', lat: '28.6139', lon: '77.2090' },
 
   // GLOBAL METROS
   { name: 'New York', state: 'New York', country: 'USA', lat: '40.7128', lon: '-74.0060' },
