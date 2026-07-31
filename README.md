@@ -4,15 +4,16 @@ A modern, production-grade full-stack web application built with **FastAPI (Pyth
 
 ---
 
-## 🌐 Live Deployment Links & Branches
+## 🌐 Live Production Links & Branches
 
-| Service | Environment | Link / Repository |
-| :--- | :--- | :--- |
-| **Backend API (Render)** | Production | [https://weather-backend-ck3x.onrender.com](https://weather-backend-ck3x.onrender.com) |
-| **GitHub Repository** | Public | [https://github.com/hardik79999/weather-explorer](https://github.com/hardik79999/weather-explorer) |
-| **`main` Branch** | Combined Full-Stack | [https://github.com/hardik79999/weather-explorer/tree/main](https://github.com/hardik79999/weather-explorer/tree/main) |
-| **`frontend` Branch** | Isolated Frontend | [https://github.com/hardik79999/weather-explorer/tree/frontend](https://github.com/hardik79999/weather-explorer/tree/frontend) |
-| **`backend` Branch** | Isolated Backend | [https://github.com/hardik79999/weather-explorer/tree/backend](https://github.com/hardik79999/weather-explorer/tree/backend) |
+| Service | Status | Live Link / Repository |
+| :--- | :---: | :--- |
+| **Live Web App (Vercel)** | 🟢 Live | [https://weather-explorer-ochre.vercel.app](https://weather-explorer-ochre.vercel.app) |
+| **Backend API (Render)** | 🟢 Live | [https://weather-backend-ck3x.onrender.com](https://weather-backend-ck3x.onrender.com) |
+| **GitHub Repository** | 🟢 Public | [https://github.com/hardik79999/weather-explorer](https://github.com/hardik79999/weather-explorer) |
+| **`main` Branch** | Combined | [https://github.com/hardik79999/weather-explorer/tree/main](https://github.com/hardik79999/weather-explorer/tree/main) |
+| **`frontend` Branch** | Frontend | [https://github.com/hardik79999/weather-explorer/tree/frontend](https://github.com/hardik79999/weather-explorer/tree/frontend) |
+| **`backend` Branch** | Backend | [https://github.com/hardik79999/weather-explorer/tree/backend](https://github.com/hardik79999/weather-explorer/tree/backend) |
 
 ---
 
